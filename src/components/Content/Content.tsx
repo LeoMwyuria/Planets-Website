@@ -1,4 +1,4 @@
-// Content.tsx
+
 import React from 'react';
 
 interface ContentProps {
