@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import MenuComponentsDesktop from '../menu/menuComponents/menuComponentsDesktop';
 
 
-React
+
 
 const Header = () => {
   const [menuClicked, setMenuClicked] = useState(false);
