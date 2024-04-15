@@ -1,0 +1,121 @@
+.content{
+    color: white;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    padding: 5px;
+    
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.overview:hover{
+    cursor: pointer;
+}
+.structure:hover{
+    cursor: pointer;
+}
+.surface:hover{
+    cursor: pointer;
+}
+.active {
+    border-bottom: 2px solid yellow; 
+    cursor: pointer;
+  }
+  .section {
+    cursor: pointer;
+  }
+  
+  .section:hover {
+    cursor: pointer;
+  }
+  @media screen and (min-width:768px){
+    .content{
+        color: white;
+        display: grid;
+        gap: 60px;
+        align-items: center;
+        padding: 5px;
+        text-align: center;
+        width: 281px;
+    height: 40px;
+    position: relative;
+    left: 220px;
+    top: 400px;
+    
+   
+    
+        
+    }
+    .active {
+        background: rgba(65, 158, 187, 1);
+        border-bottom: 0px;
+
+        cursor: pointer;
+
+      }
+      
+      .section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        cursor: pointer;
+        border: 1px solid gray;
+       
+        
+font-size: 11px;
+font-weight: 500;
+line-height: 25px;
+letter-spacing: 1.9285714626312256px;
+text-align: center;
+
+      }
+    
+  }
+  @media screen and (min-width:1400px){
+    .content{
+        color: white;
+        display: grid;
+        gap: 20px;
+        align-items: center;
+        padding: 5px;
+        text-align: center;
+        width: 281px;
+    height: 40px;
+    position: relative;
+    left: 450px;
+    top: 450px;
+    
+   
+    
+        
+    }
+    .active {
+        background: rgba(65, 158, 187, 1);
+        border-bottom: 0px;
+
+        cursor: pointer;
+
+      }
+      
+      .section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        cursor: pointer;
+        border: 1px solid gray;
+       
+        
+font-size: 11px;
+font-weight: 500;
+line-height: 25px;
+letter-spacing: 1.9285714626312256px;
+text-align: center;
+
+      }
+    
+  }

@@ -1,0 +1,32 @@
+.header{
+    border-bottom: 1px solid  rgb(138, 138, 138);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    color: white;
+  }
+  .header img{
+    margin-right: 10px;
+  }
+  .header img:hover{
+    cursor: pointer;
+  }
+  @media screen and (min-width:768px){
+    .menu{
+        display: none;
+    }
+    .header2{
+        display: flex;
+        gap: 30px;
+    }
+
+  }
+  @media screen and (min-width:1400px){
+    .header2{
+        display: flex;
+        gap: 30px;
+    }
+    
+  }

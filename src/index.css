@@ -1,0 +1,88 @@
+body{
+  background: #070724;
+  background-image: url('./assets/stars.png');
+  background-repeat: repeat;
+ background-size: cover;
+ font-family: 'Antonio';
+  
+}
+.main{
+  width: 375px;
+height: 1000px;
+padding: 3px;
+
+margin-right: auto;
+margin-left: auto;
+}
+.welcome-planet{
+
+  width: 380px;
+   margin-left: auto;
+   margin-right: auto;
+}
+.welcomePage{
+  color: white;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+
+  text-align: center;
+}
+.image{
+  width: 111px;
+height: 111px;
+
+
+
+margin-left: auto;
+margin-right: auto;
+
+}
+@media screen and (min-width:768px){
+  .main{
+    width: 768px;
+height: 1024px;
+
+
+  }
+  .welcome-planet{
+    width: 768px;
+  }
+  .welcomePage{
+    width: 768px;
+  }
+  .image{
+    width: 184px;
+height: 184px;
+
+
+
+
+  }
+}
+@media screen and (min-width: 1400px){
+.main{
+  width: 1400px;
+  height: 1024px;
+}
+.image{
+  width: 290px;
+height: 290px;
+position: relative;
+right: 250px;
+top: 200px;
+
+}
+.welcome-planet{
+  position: relative;
+  left: 300px;
+
+  width: 880px;
+   margin-left: auto;
+   margin-right: auto;
+}
+.welcomePage{
+  display: none;
+}
+}
