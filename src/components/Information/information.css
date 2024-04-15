@@ -91,7 +91,7 @@
         color: white;
         text-align: start;
         position: relative;
-        z-index: -1;
+        
         
         height: 680px;
         gap: 0px;
@@ -106,7 +106,7 @@
        
         width: 330px;
         left: 990px;
-        bottom: 250px;
+        bottom: 280px;
         height: 300px;
     }
     .h1{
@@ -115,5 +115,7 @@
     }
     .wikipedia{
         margin-right: 35px;
+        position: relative;
+        z-index: 1;
     }
 }
