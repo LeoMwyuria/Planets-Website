@@ -6,6 +6,7 @@ body{
  font-family: 'Antonio';
   
 }
+
 .main{
   width: 375px;
 height: 1000px;
@@ -20,6 +21,7 @@ margin-left: auto;
    margin-left: auto;
    margin-right: auto;
 }
+
 .welcomePage{
   color: white;
   font-size: 30px;
@@ -39,12 +41,23 @@ margin-left: auto;
 margin-right: auto;
 
 }
+.mainPage{
+  display: none;
+}
 @media screen and (min-width:768px){
   .main{
     width: 768px;
 height: 1024px;
 
 
+  }
+  .mainPage{
+    display: block;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 25px;
   }
   .welcomePage{
     display: none;
@@ -66,6 +79,14 @@ height: 184px;
 .main{
   width: 1400px;
   height: 1024px;
+}
+.mainPage{
+  display: block;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 25px;
 }
 .image{
   width: 290px;

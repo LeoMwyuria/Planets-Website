@@ -14,11 +14,16 @@ function App() {
   return (
     <div className='main'>
       <Header />
-      <img className="welcome-planet" src={saturn} alt="" />
       <div className="welcomePage">
         <p>Welcome To The PLANET WEBSITE</p>
         <p>Press Menu To See Planet List</p>
       </div>
+      <div className="mainPage">
+        <p>Welcome To The PLANET WEBSITE</p>
+        <p>Press Your Desired Planet To See Information About It</p>
+      </div>
+      
+
       
 
     </div>
