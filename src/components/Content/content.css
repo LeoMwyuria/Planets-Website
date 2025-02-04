@@ -1,126 +1,27 @@
-.content{
-    color: white;
-    display: flex;
-    gap: 60px;
-    align-items: center;
-    padding: 5px;
-    
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 280px;
 }
 
-.overview:hover{
-    cursor: pointer;
+.section {
+  width: 100%;
+  height: 40px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
-.structure:hover{
-    cursor: pointer;
-}
-.surface:hover{
-    cursor: pointer;
-}
+
 .active {
-    border-bottom: 2px solid yellow; 
-    cursor: pointer;
-  }
-  .section {
-    cursor: pointer;
-  }
-  
-  .section:hover {
-    cursor: pointer;
-  }
-  @media screen and (min-width:768px){
-    .content{
-        color: white;
-        display: grid;
-        gap: 60px;
-        align-items: center;
-        padding: 5px;
-        text-align: center;
-        width: 281px;
-    height: 40px;
-    position: relative;
-    left: 220px;
-    top: 400px;
-    
-   
-    
-        
-    }
-    .active {
-        background: rgba(65, 158, 187, 1);
-        border-bottom: 0px;
+  background: #419EBB;
+  border-color: #419EBB;
+}
 
-        cursor: pointer;
-
-      }
-      
-      .section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 40px;
-        cursor: pointer;
-        border: 1px solid gray;
-       
-        
-font-size: 11px;
-font-weight: 500;
-line-height: 25px;
-letter-spacing: 1.9285714626312256px;
-text-align: center;
-
-      }
-    
-  }
-  @media screen and (min-width:1400px){
-    .content{
-        color: white;
-        display: grid;
-        gap: 20px;
-        align-items: center;
-        padding: 5px;
-        text-align: center;
-        width: 281px;
-    height: 40px;
-    position: relative;
-    left: 450px;
-    top: 450px;
-    z-index: 1;
-    
-   
-    
-   
-    
-        
-    }
-    .active {
-        background: rgba(65, 158, 187, 1);
-        border-bottom: 0px;
-       
-
-        cursor: pointer;
-
-      }
-      
-      .section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 40px;
-        cursor: pointer;
-        
-        border: 1px solid gray;
-       
-        
-font-size: 11px;
-font-weight: 500;
-line-height: 25px;
-letter-spacing: 1.9285714626312256px;
-text-align: center;
-
-      }
-    
-  }
+.section:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1);
+}

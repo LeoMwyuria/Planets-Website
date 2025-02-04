@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface ContentProps {
@@ -9,24 +8,24 @@ interface ContentProps {
 const Content: React.FC<ContentProps> = ({ setActiveSection, activeSection }) => {
   return (
     <div className='content'>
-      <div
+      <button
         className={`section ${activeSection === 'overview' ? 'active' : ''}`}
         onClick={() => setActiveSection('overview')}
       >
         OVERVIEW
-      </div>
-      <div
+      </button>
+      <button
         className={`section ${activeSection === 'structure' ? 'active' : ''}`}
         onClick={() => setActiveSection('structure')}
       >
         STRUCTURE
-      </div>
-      <div
+      </button>
+      <button
         className={`section ${activeSection === 'geology' ? 'active' : ''}`}
         onClick={() => setActiveSection('geology')}
       >
         GEOLOGY
-      </div>
+      </button>
     </div>
   );
 };

@@ -1,0 +1,25 @@
+.content1 {
+    color: white;
+    width: 280px;
+    margin: 20px auto;
+  }
+  
+  .planetText {
+    text-align: left;
+  }
+  
+  .h1 {
+    font-size: 28px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  
+  .wikipedia {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .wikipedia:hover {
+    text-decoration: underline;
+  }

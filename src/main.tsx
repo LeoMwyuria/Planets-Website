@@ -7,16 +7,16 @@ import Menu from './components/menu/menu.tsx'
 import './/components/Header/header.css'
 import './/components/menu/menu.css'
 
-import Mercury from './components/Planets/Mercury/Mercury.tsx'
+import Mercury from './pages/Mercury/Mercury.tsx'
 import "./components/Content/content.css"
 import './components/Information/information.css'
-import Venus from './components/Planets/Venus/Venus.tsx'
-import Earth from './components/Planets/Earth/Earth.tsx'
-import Mars from './components/Planets/Mars/Mars.tsx'
-import Jupiter from './components/Planets/Jupiter/Jupiter.tsx'
-import Saturn from './components/Planets/Saturn/Saturn.tsx'
-import Uranus from './components/Planets/Uranus/Uranus.tsx'
-import Neptune from './components/Planets/Neptune/Neptune.tsx'
+import Venus from './pages/Venus/Venus.tsx'
+import Earth from './pages/Earth/Earth.tsx'
+import Mars from './pages/Mars/Mars.tsx'
+import Jupiter from './pages/Jupiter/Jupiter.tsx'
+import Saturn from './pages/Saturn/Saturn.tsx'
+import Uranus from './pages/Uranus/Uranus.tsx'
+import Neptune from './pages/Neptune/Neptune.tsx'
 
 const router = createBrowserRouter([
   {

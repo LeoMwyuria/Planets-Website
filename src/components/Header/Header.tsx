@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import menu from '../../assets/menu.png';
 import { useNavigate } from 'react-router-dom';
 import MenuComponentsDesktop from '../menu/menuComponents/menuComponentsDesktop';
@@ -43,10 +43,13 @@ const Header = () => {
     const neptuneClick = () =>{
         navigation("/menu/neptune")
     }
+    const homeClick = () =>{
+      navigation("/")
+    }
 
   return (
     <div className='header'>
-      <p>THE PLANETS</p>
+      <p  style={{cursor:'pointer'}} onClick={homeClick}>THE PLANETS</p>
       <div className='header2'>
       <MenuComponentsDesktop
         p1='MERCURY'

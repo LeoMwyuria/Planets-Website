@@ -1,33 +1,16 @@
-
+import React from 'react';
 import Header from "./components/Header/Header";
-import data from "./data/data.json"
-import saturn from "./assets/saturn.png"
+import SolarSystem from './components/SolarSystem/SolarSystem';
 
 function App() {
-  
-  
-
-  
-  
-  console.log(data);
-
   return (
-    <div className='main'>
-      <Header />
-      <div className="welcomePage">
-        <p>Welcome To The PLANET WEBSITE</p>
-        <p>Press Menu To See Planet List</p>
+    <div style={{ height: '100vh', position: 'relative' }}>
+      <div style={{ position: 'absolute', width: '100%', zIndex: 10 }}>
+        <Header />
       </div>
-      <div className="mainPage">
-        <p>Welcome To The PLANET WEBSITE</p>
-        <p>Press Your Desired Planet To See Information About It</p>
-      </div>
-      
-
-      
-
+      <SolarSystem />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
