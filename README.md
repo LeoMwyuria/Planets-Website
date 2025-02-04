@@ -1,30 +1,45 @@
-# React + TypeScript + Vite
+# 🌍 3D Solar System Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Overview
+This project is a **3D interactive solar system** website built using **React, Three.js, and React-Three-Fiber**. It features an interactive model of Earth with orbit controls, realistic textures, and planetary data visualization.
 
-Currently, two official plugins are available:
+## ✨ Features
+- 🌌 **3D Earth Model**: Rotating Earth with realistic textures.
+- 🛰️ **Orbit Controls**: Interactive rotation and zoom.
+- ⭐ **Stars Background**: Immersive space environment.
+- 📊 **Planetary Data**: Displays Earth's rotation, revolution, radius, and temperature.
+- 📱 **Fully Responsive**: Works on desktop, tablet, and mobile.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technologies Used
+- **React** 
+- **Three.js & React-Three-Fiber** 
+- **TypeScript** 
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## 🔧 Installation
+1️⃣ Clone the repository:
+```sh
+ git clone https://github.com/LeoMwyuria/Planets-Website.git
+ cd planets-website
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2️⃣ Install dependencies:
+```sh
+ npm install
+```
+
+3️⃣ Start the development server:
+```sh
+ npm run dev
+```
+
+4️⃣ Open in the browser:
+```
+http://localhost:3000
+```
+
+## 🤝 Contributing
+Pull requests are welcome! If you find a bug or have a suggestion, open an issue.
+
+---
+✨ **Enjoy exploring the universe! 🚀**
