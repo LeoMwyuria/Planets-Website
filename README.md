@@ -33,11 +33,6 @@ This project is a **3D interactive solar system** website built using **React, T
  npm run dev
 ```
 
-4️⃣ Open in the browser:
-```
-http://localhost:3000
-```
-
 ## 🤝 Contributing
 Pull requests are welcome! If you find a bug or have a suggestion, open an issue.
 
