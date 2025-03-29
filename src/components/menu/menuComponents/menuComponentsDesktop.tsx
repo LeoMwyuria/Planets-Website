@@ -15,13 +15,6 @@ const MenuComponentsDesktop: React.FC<MenuComponentsDesktopProps> = ({ p1, oncli
         <div className='p3'>{p1}</div>
 
         </div>
-      
-       
-      
-  
-      
-    
-    
 
     </div>
     

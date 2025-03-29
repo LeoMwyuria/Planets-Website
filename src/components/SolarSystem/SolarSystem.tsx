@@ -116,7 +116,7 @@ const Planet: React.FC<{
         </group>
       );
   };
-// Add this new component
+  
 const PerformanceOptimizer: React.FC = () => {
     useThree(({ gl }) => {
       gl.setPixelRatio(1);
@@ -124,7 +124,6 @@ const PerformanceOptimizer: React.FC = () => {
     return null;
   };
   
-  // Update your SolarSystem component
   const SolarSystem: React.FC = () => {
     return (
       <div style={{ width: '100%', height: '100%', background: '#000000' }}>

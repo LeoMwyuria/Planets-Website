@@ -34,14 +34,14 @@ interface Planet {
   };
 }
 
-// 🌍 **Earth 3D Model Component**
+
 const EarthPlanet: React.FC = () => {
   const earthTexture = useTexture(planetTextures.earth);
   const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += 0.002; // 🌍 Earth rotates faster than Jupiter
+      meshRef.current.rotation.y += 0.002;
     }
   });
 
@@ -53,7 +53,7 @@ const EarthPlanet: React.FC = () => {
   );
 };
 
-// 🪐 **Main Earth Component**
+
 const Earth: React.FC = () => {
   const earthData: Planet | undefined = data.find((planet: Planet) => planet.name === "Earth");
   const [activeSection, setActiveSection] = useState<'overview' | 'structure' | 'geology'>('overview');
@@ -63,7 +63,7 @@ const Earth: React.FC = () => {
   }
 
   return (
-    <div className='main' style={{ background: '#000', height: '100vh', position: 'relative', overflow: 'hidden' }}>
+    <div className='main' style={{ background: '#000', height: '100vh', position: 'relative',  }}>
       {/* 🌌 Space Background */}
       <Canvas style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
         <Stars radius={300} depth={60} count={5000} factor={7} saturation={0} fade speed={1} />
@@ -72,7 +72,7 @@ const Earth: React.FC = () => {
       <div style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column' }}>
         <Header />
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '50px' }}>
+          <div className='planet-info' style={{ display: 'flex',justifyContent: 'space-between', alignItems: 'center', marginBottom: '50px' }}>
             {/* 🎥 3D Earth */}
             <Canvas camera={{ position: [0, 0, 8], fov: 45 }} style={{ background: 'transparent', flex: 1 }}>
               <ambientLight intensity={0.5} />
@@ -82,7 +82,7 @@ const Earth: React.FC = () => {
             </Canvas>
 
             {/* ℹ️ Earth Info Panel */}
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', gap: '50px', padding: '0 40px', width: '35%', marginRight: '100px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', gap: '50px', padding: '0 40px', width: '35%'}}>
               <PlanetInfo
                 heading="Earth"
                 paragraph={activeSection === 'overview' ? earthData.overview.content : activeSection === 'structure' ? earthData.structure.content : earthData.geology.content}

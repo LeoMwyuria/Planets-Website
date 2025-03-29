@@ -18,6 +18,7 @@ body{
    margin-right: auto;
 }
 
+
 .welcomePage{
   color: white;
   font-size: 30px;
@@ -40,11 +41,16 @@ margin-right: auto;
 .mainPage{
   display: none;
 }
-@media screen and (min-width:768px){
+@media screen and (max-width:768px){
   .main {
     width: 100%;
     min-height: 100vh;
   }
+
+    .planet-info {
+      flex-direction: column; 
+
+    }
 
   .mainPage{
     display: block;
@@ -75,6 +81,7 @@ height: 184px;
     width: 100%;
     min-height: 100vh;
   }
+
 .mainPage{
   display: block;
   color: white;
@@ -102,4 +109,5 @@ top: 200px;
 .welcomePage{
   display: none;
 }
+
 }
