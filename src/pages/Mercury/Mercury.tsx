@@ -69,7 +69,6 @@ const Mercury: React.FC = () => {
       background: '#000000', 
       height: '100vh', 
       position: 'relative', 
-      overflow: 'hidden'
     }}>
       <Canvas
         style={{
@@ -107,11 +106,12 @@ const Mercury: React.FC = () => {
           justifyContent: 'center',
           position: 'relative'
         }}>
-          <div style={{ 
+          <div className='planet-info' style={{ 
             display: 'flex', 
             justifyContent: 'space-between', 
             alignItems: 'center', 
-            marginBottom: '50px' 
+            marginBottom: '50px' ,
+            
           }}>
             <Canvas
               camera={{ position: [0, 0, 8], fov: 45 }}
@@ -126,16 +126,8 @@ const Mercury: React.FC = () => {
                 rotateSpeed={0.5} 
               />
             </Canvas>
-            <div style={{ 
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              gap: '50px',
-              padding: '0 40px',
-              width: '35%',
-              marginRight: '100px'
-            }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', gap: '50px', padding: '0 40px', width: '35%' }}>
+              
               <PlanetInfo 
                 heading="Mercury"
                 paragraph={activeSection === 'overview' ? mercuryData.overview.content : activeSection === 'structure' ? mercuryData.structure.content : mercuryData.geology.content}

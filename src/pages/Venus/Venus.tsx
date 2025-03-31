@@ -68,7 +68,7 @@ const Venus: React.FC = () => {
       background: '#000000', 
       height: '100vh', 
       position: 'relative',
-      overflow: 'hidden'
+      
     }}>
       <Canvas
         style={{
@@ -106,7 +106,7 @@ const Venus: React.FC = () => {
           justifyContent: 'center',
           position: 'relative'
         }}>
-          <div style={{ 
+          <div className='planet-info'  style={{ 
             display: 'flex',
             justifyContent: 'space-between', 
             alignItems: 'center',
@@ -125,16 +125,7 @@ const Venus: React.FC = () => {
                 rotateSpeed={0.5}
               />
             </Canvas>
-            <div style={{ 
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              gap: '50px',
-              padding: '0 40px',
-              width: '35%',
-              marginRight: '100px'
-            }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', gap: '50px', padding: '0 40px', width: '35%' }}>
               <PlanetInfo 
                 heading="Venus"
                 paragraph={activeSection === 'overview' ? venusData.overview.content : activeSection === 'structure' ? venusData.structure.content : venusData.geology.content}

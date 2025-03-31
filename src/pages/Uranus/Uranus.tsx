@@ -69,7 +69,7 @@ const Uranus: React.FC = () => {
       background: '#000000', 
       height: '100vh', 
       position: 'relative', 
-      overflow: 'hidden'
+     
     }}>
       <Canvas
         style={{
@@ -107,7 +107,7 @@ const Uranus: React.FC = () => {
           justifyContent: 'center',
           position: 'relative'
         }}>
-          <div style={{ 
+          <div className='planet-info' style={{ 
             display: 'flex', 
             justifyContent: 'space-between', 
             alignItems: 'center', 
@@ -126,16 +126,7 @@ const Uranus: React.FC = () => {
                 rotateSpeed={0.5} 
               />
             </Canvas>
-            <div style={{ 
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              gap: '50px',
-              padding: '0 40px',
-              width: '35%',
-              marginRight: '100px'
-            }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', gap: '50px', padding: '0 40px', width: '35%' }}>
               <PlanetInfo 
                 heading="Uranus"
                 paragraph={activeSection === 'overview' ? uranusData.overview.content : activeSection === 'structure' ? uranusData.structure.content : uranusData.geology.content}
