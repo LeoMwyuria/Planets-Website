@@ -1,0 +1,271 @@
+/* ════════════════════════════════════════════════
+   Planet Page — Modern glassmorphism design
+   ════════════════════════════════════════════════ */
+
+.planet-page {
+  background: #000;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.planet-page-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Main body layout ── */
+.planet-page-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .planet-page-body {
+    flex-direction: row;
+    padding: 0 60px;
+    gap: 40px;
+  }
+}
+
+/* ── 3D Planet viewer ── */
+.planet-viewer {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .planet-viewer {
+    width: 50%;
+    max-width: none;
+    aspect-ratio: auto;
+    height: 65vh;
+    min-height: 400px;
+    flex-shrink: 1;
+  }
+}
+
+/* ── Info panel ── */
+.planet-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (min-width: 1024px) {
+  .planet-info-panel {
+    width: 35%;
+    max-width: 420px;
+  }
+}
+
+/* ── Info card glassmorphism ── */
+.planet-info-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: border-color 0.3s ease;
+}
+
+.planet-info-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.planet-name {
+  font-family: 'Antonio', sans-serif;
+  font-size: 52px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+  line-height: 1;
+}
+
+.planet-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0 0 20px 0;
+  min-height: 100px;
+  font-family: 'Antonio', sans-serif;
+  font-weight: 300;
+}
+
+.planet-source {
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  font-size: 13px;
+  font-family: 'Antonio', sans-serif;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+.planet-source:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── Section toggle buttons ── */
+.planet-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.planet-section-btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 24px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  cursor: pointer;
+  font-family: 'Antonio', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  border-radius: 0;
+}
+
+.planet-section-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.planet-section-btn.active {
+  background: var(--accent, #419EBB);
+  border-color: var(--accent, #419EBB);
+}
+
+.section-number {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.planet-section-btn.active .section-number {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.section-label {
+  font-weight: 400;
+}
+
+/* ── Stats bar ── */
+.planet-stats-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .planet-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .planet-stats-bar {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 24px 60px 40px;
+    gap: 20px;
+  }
+}
+
+.planet-stat-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.planet-stat-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Antonio', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  color: white;
+  font-family: 'Antonio', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── Loading spinner ── */
+.planet-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Antonio', sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+.planet-loading-ring {
+  width: 48px;
+  height: 48px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-radius: 50%;
+  animation: planet-spin 1s linear infinite;
+}
+
+@keyframes planet-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Responsive planet name ── */
+@media (max-width: 600px) {
+  .planet-name {
+    font-size: 38px;
+  }
+
+  .stat-value {
+    font-size: 22px;
+  }
+
+  .planet-info-card {
+    padding: 24px 20px;
+  }
+}

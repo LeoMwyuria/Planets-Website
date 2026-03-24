@@ -1,57 +1,137 @@
+/* ════════════════════════════════════════════════
+   Header — Sleek navigation bar
+   ════════════════════════════════════════════════ */
+
 .header {
-  border-bottom: 1px solid rgb(138, 138, 138);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px;
+  padding: 10px 24px;
   color: white;
-  padding-left: 20px;
-  padding-right: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 100;
 }
 
 .header-left {
   display: flex;
   flex-direction: column;
-}
-
-.interaction-text {
-  font-size: 12px;
-  color: #a0a0a0;
-  margin-top: -5px;
-  font-style: italic;
-}
-
-.header img {
-  margin-right: 10px;
-}
-
-.header img:hover {
+  gap: 0;
   cursor: pointer;
 }
 
+.header-left > p:first-child {
+  font-size: 22px;
+  letter-spacing: 4px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.interaction-text {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ── Desktop nav buttons ── */
+.header-nav {
+  display: none;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-planet-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Antonio', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.header-planet-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 2px;
+  background: var(--planet-color, #fff);
+  transition: transform 0.25s ease;
+}
+
+.header-planet-btn:hover {
+  color: white;
+}
+
+.header-planet-btn:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.header-planet-btn.active {
+  color: white;
+}
+
+.header-planet-btn.active::after {
+  transform: translateX(-50%) scaleX(1);
+  background: var(--planet-color, #fff);
+}
+
+/* ── Mobile hamburger ── */
+.menu {
+  cursor: pointer;
+  padding: 4px;
+}
+
+.menu img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.menu img:hover {
+  opacity: 1;
+}
+
+/* ── Responsive ── */
 @media screen and (min-width: 768px) {
   .menu {
     display: none;
   }
-  .header2 {
+
+  .header-nav {
     display: flex;
-    gap: 30px;
   }
-  .header-left {
-    flex-direction: column;
-  }
+
   .interaction-text {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
-@media screen and (min-width: 1400px) {
-  .header2 {
-    display: flex;
-    gap: 30px;
+@media screen and (min-width: 1200px) {
+  .header-planet-btn {
+    font-size: 13px;
+    padding: 10px 14px;
   }
-  .interaction-text {
-    font-size: 16px;
+
+  .header-nav {
+    gap: 8px;
   }
 }
+
+/* ── Legacy support ── */
+.header2 { display: none; }
+.flex-container3 { display: none; }
+.flex-container4 { display: none; }

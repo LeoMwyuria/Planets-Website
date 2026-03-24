@@ -1,95 +1,84 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Header from '../Header/Header';
-import MenuComponents from './menuComponents/menuComponents';
 import { useNavigate } from 'react-router-dom';
+import { Canvas } from '@react-three/fiber';
+import { Stars } from '@react-three/drei';
+import gsap from 'gsap';
+import TransitionLink from '../Transition/TransitionLink';
+
+const planets = [
+  { name: 'Mercury', color: '#DEF4FC', size: '36px' },
+  { name: 'Venus', color: '#F7CC7F', size: '42px' },
+  { name: 'Earth', color: '#545BFE', size: '44px' },
+  { name: 'Mars', color: '#FF6A45', size: '38px' },
+  { name: 'Jupiter', color: '#ECAD7A', size: '56px' },
+  { name: 'Saturn', color: '#FCCB6B', size: '52px' },
+  { name: 'Uranus', color: '#65F0D5', size: '48px' },
+  { name: 'Neptune', color: '#497EFA', size: '48px' },
+];
 
 const Menu = () => {
   const navigation = useNavigate();
-  
-  const mercuryClick = () => {
-    navigation("/menu/mercury")
-  };
-  
-  const venusClick = () => {
-    navigation("/menu/venus")
-  };
-  
-  const earthClick = () => {
-    navigation("/menu/earth")
-  };
-  
-  const marsClick = () => {
-    navigation("/menu/mars")
-  };
-  
-  const jupiterClick = () => {
-    navigation("/menu/jupiter")
-  }
-  
-  const saturnClick = () => {
-    navigation("/menu/saturn")
-  }
-  
-  const uranusClick = () => {
-    navigation("/menu/uranus")
-  }
-  
-  const neptuneClick = () => {
-    navigation("/menu/neptune")
-  }
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.menu-planet-card',
+        { x: -60, opacity: 0, scale: 0.9 },
+        {
+          x: 0, opacity: 1, scale: 1,
+          duration: 0.6,
+          ease: 'back.out(1.4)',
+          stagger: { each: 0.08, from: 'start' },
+          delay: 0.2,
+        }
+      );
+    }, containerRef);
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div className='menu-page'>
-      <Header />
-      <div className='grid-container'>
-        <MenuComponents 
-          p1='MERCURY'
-          p2='>'
-          classname='circle1'
-          onclick={mercuryClick}
-        />
-        <MenuComponents 
-          p1='VENUS'
-          p2='>'
-          classname='circle2'
-          onclick={venusClick}
-        />
-        <MenuComponents 
-          p1='EARTH'
-          p2='>'
-          classname='circle3'
-          onclick={earthClick}
-        />
-        <MenuComponents 
-          p1='MARS'
-          p2='>'
-          classname='circle4'
-          onclick={marsClick}
-        />
-        <MenuComponents 
-          p1='JUPITER'
-          p2='>'
-          classname='circle5'
-          onclick={jupiterClick}
-        />
-        <MenuComponents 
-          p1='SATURN'
-          p2='>'
-          classname='circle6'
-          onclick={saturnClick}
-        />
-        <MenuComponents 
-          p1='URANUS'
-          p2='>'
-          classname='circle7'
-          onclick={uranusClick}
-        />
-        <MenuComponents 
-          p1='NEPTUNE'
-          p2='>'
-          classname='circle8'
-          onclick={neptuneClick}
-        />
+    <div className="menu-page" ref={containerRef}>
+      {/* Starfield background */}
+      <Canvas
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+        dpr={1}
+      >
+        <Stars radius={300} depth={80} count={2500} factor={6} saturation={0.1} fade speed={0.5} />
+      </Canvas>
+
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <Header />
+        <div className="grid-container">
+          {planets.map((planet) => (
+            <TransitionLink
+              key={planet.name}
+              to={`/menu/${planet.name.toLowerCase()}`}
+              className="menu-planet-card"
+              style={{ '--card-accent': planet.color } as React.CSSProperties}
+            >
+              <div
+                className="menu-planet-circle"
+                style={{
+                  background: `radial-gradient(circle at 35% 35%, ${planet.color}dd, ${planet.color}44)`,
+                  width: planet.size,
+                  height: planet.size,
+                  boxShadow: `0 0 20px ${planet.color}40`,
+                }}
+              />
+              <span className="menu-planet-name">{planet.name}</span>
+              <span className="menu-planet-arrow">→</span>
+            </TransitionLink>
+          ))}
+        </div>
       </div>
     </div>
   );

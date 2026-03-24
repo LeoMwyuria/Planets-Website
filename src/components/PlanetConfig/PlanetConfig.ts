@@ -11,7 +11,7 @@ import uranusTexture from '../../assets/2k_uranus.jpg';
 import neptuneTexture from '../../assets/2k_neptune.jpg';
 import starsTexture from '../../assets/2k_stars_milky_way.jpg';
 
-export const planetTextures = {
+export const planetTextures: Record<string, string> = {
   sun: sunTexture,
   mercury: mercuryTexture,
   venus: venusTexture,
@@ -23,13 +23,14 @@ export const planetTextures = {
   neptune: neptuneTexture,
   stars: starsTexture
 };
+
 export const planetConfigs = [
-  { name: 'mercury', size: 0.4, distance: 10, texture: planetTextures.mercury },
-  { name: 'venus', size: 0.9, distance: 15, texture: planetTextures.venus },
-  { name: 'earth', size: 1, distance: 20, texture: planetTextures.earth },
-  { name: 'mars', size: 0.5, distance: 25, texture: planetTextures.mars },
-  { name: 'jupiter', size: 2.5, distance: 35, texture: planetTextures.jupiter },
-  { name: 'saturn', size: 2.2, distance: 45, texture: planetTextures.saturn },
-  { name: 'uranus', size: 1.8, distance: 55, texture: planetTextures.uranus },
-  { name: 'neptune', size: 1.8, distance: 65, texture: planetTextures.neptune }
+  { name: 'mercury', size: 0.4, distance: 10, texture: planetTextures.mercury, speed: 0.16 },
+  { name: 'venus', size: 0.9, distance: 15, texture: planetTextures.venus, speed: 0.12 },
+  { name: 'earth', size: 1, distance: 20, texture: planetTextures.earth, speed: 0.10 },
+  { name: 'mars', size: 0.5, distance: 25, texture: planetTextures.mars, speed: 0.08 },
+  { name: 'jupiter', size: 2.5, distance: 35, texture: planetTextures.jupiter, speed: 0.045 },
+  { name: 'saturn', size: 2.2, distance: 45, texture: planetTextures.saturn, speed: 0.035 },
+  { name: 'uranus', size: 1.8, distance: 55, texture: planetTextures.uranus, speed: 0.025 },
+  { name: 'neptune', size: 1.8, distance: 65, texture: planetTextures.neptune, speed: 0.018 }
 ];

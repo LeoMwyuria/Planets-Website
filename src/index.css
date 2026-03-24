@@ -1,113 +1,66 @@
-body{
- font-family: 'Antonio';
+/* ════════════════════════════════════════════════
+   Global Styles — Dark space theme
+   ════════════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Antonio', sans-serif;
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Legacy support classes ── */
 .main {
   width: 100%;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
 }
-.welcome-planet{
 
-  width: 380px;
-   margin-left: auto;
-   margin-right: auto;
+.planet-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
-.welcomePage{
-  color: white;
-  font-size: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 200px;
-
-  text-align: center;
-}
-.image{
-  width: 111px;
-height: 111px;
-
-
-
-margin-left: auto;
-margin-right: auto;
-
-}
-.mainPage{
-  display: none;
-}
-@media screen and (max-width:768px){
-  .main {
-    width: 100%;
-    min-height: 100vh;
+@media screen and (max-width: 768px) {
+  .planet-info {
+    flex-direction: column;
   }
-
-    .planet-info {
-      flex-direction: column; 
-
-    }
-
-  .mainPage{
-    display: block;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: 25px;
-  }
-  .welcomePage{
-    display: none;
-  }
-  .welcome-planet{
-    width: 768px;
-  }
-  
-  .image{
-    width: 184px;
-height: 184px;
-
-
-
-
-  }
-}
-@media screen and (min-width: 1400px){
-  .main {
-    width: 100%;
-    min-height: 100vh;
-  }
-
-.mainPage{
-  display: block;
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  font-size: 25px;
-}
-.image{
-  width: 290px;
-height: 290px;
-position: relative;
-right: 250px;
-top: 200px;
-
-}
-.welcome-planet{
-  position: relative;
-  left: 300px;
-
-  width: 880px;
-   margin-left: auto;
-   margin-right: auto;
-}
-.welcomePage{
-  display: none;
-}
-
 }

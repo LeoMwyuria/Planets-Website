@@ -1,71 +1,81 @@
-import React from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter, Outlet, useLocation } from 'react-router-dom'
 import Menu from './components/menu/menu.tsx'
-import './/components/Header/header.css'
-import './/components/menu/menu.css'
+import './components/Header/header.css'
+import './components/menu/menu.css'
+import PlanetPage from './components/PlanetPage/PlanetPage.tsx'
+import Preloader from './components/Preloader/Preloader.tsx'
 
-import Mercury from './pages/Mercury/Mercury.tsx'
-import "./components/Content/content.css"
-import './components/Information/information.css'
-import Venus from './pages/Venus/Venus.tsx'
-import Earth from './pages/Earth/Earth.tsx'
-import Mars from './pages/Mars/Mars.tsx'
-import Jupiter from './pages/Jupiter/Jupiter.tsx'
-import Saturn from './pages/Saturn/Saturn.tsx'
-import Uranus from './pages/Uranus/Uranus.tsx'
-import Neptune from './pages/Neptune/Neptune.tsx'
+const planetNames = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'];
+
+/* ── Root layout — wraps all routes with preloader + transition overlay + sound init ── */
+const RootLayout: React.FC = () => {
+  const [loaded, setLoaded] = useState(false);
+  const location = useLocation();
+
+  const handlePreloaderComplete = useCallback(() => {
+    setLoaded(true);
+  }, []);
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return (
+    <>
+      {!loaded && <Preloader onComplete={handlePreloaderComplete} />}
+      <div style={{ visibility: loaded ? 'visible' : 'hidden' }}>
+        <Outlet />
+      </div>
+      {/* Page transition overlay — targeted by TransitionLink */}
+      <div
+        id="page-transition-overlay"
+        style={{
+          position: 'fixed',
+          inset: 0,
+          background: '#000',
+          zIndex: 9998,
+          pointerEvents: 'none',
+          opacity: 0,
+          display: 'none',
+        }}
+      />
+    </>
+  );
+};
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element:<App />
+    element: <RootLayout />,
+    children: [
+      {
+        path: '/',
+        element: <App />,
+      },
+      {
+        path: '/menu',
+        element: <Menu />,
+      },
+      ...planetNames.map((name) => ({
+        path: `/menu/${name}`,
+        element: <PlanetPage planetName={name} />,
+      })),
+      {
+        path: '*',
+        element: (
+          <div style={{ color: 'white', background: '#000', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Antonio' }}>
+            <h1>Page not found</h1>
+          </div>
+        ),
+      },
+    ],
   },
-  {
-    path: "/menu",
-    element:<Menu />
-  },
-  {
-    path: "*",
-    element: <h1>page not found</h1>
-  },
-  {
-    path: "/menu/mercury",
-    element:<Mercury />
-  },
-  {
-    path: "/menu/venus",
-    element: <Venus />
-  },
-  {
-    path: "/menu/earth",
-    element: <Earth />
-  },
-  {
-    path: "/menu/mars",
-    element: <Mars />
-  },
-  {
-    path: "/menu/jupiter",
-    element: <Jupiter />
-  },
-  {
-    path: "/menu/saturn",
-    element: <Saturn />
-  },
-  {
-    path: "/menu/uranus",
-    element: <Uranus />
-  },
-  {
-    path: "/menu/neptune",
-    element: <Neptune />
-  },
+]);
 
-
-])
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <RouterProvider  router ={router}/>
+  <RouterProvider router={router} />
 )
